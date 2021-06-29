@@ -1,0 +1,14 @@
+<div class="main posts-index">
+  <div class="container">
+  　<h2>投稿一覧</h2>
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <%= link_to(post.content, "/posts/#{post.id}") %>
+      </div>
+    <% end %>
+
+    <div class="new-link">
+      <%= link_to('新規投稿はこちら=>', '/posts/new') %>
+    </div>
+  </div>
+</div>

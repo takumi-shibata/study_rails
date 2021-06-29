@@ -1,0 +1,10 @@
+<div class="main posts-new">
+  <div class="container">
+  <h2>新規投稿</h2>
+    <!-- モデルのみだとNoMethodError undefined method `***_path'が発生する。どこに飛ばすのかurlを指定 -->
+    <%= form_with model: @post, url: posts_create_path  do |form| %>
+      <%= form.text_field :content %>
+      <%= form.submit '投稿する' %>
+    <% end %>
+  </div>
+</div>
