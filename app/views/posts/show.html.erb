@@ -9,5 +9,13 @@
         <%= @post.created_at %>
       </div>
     </div>
+
+    <div class="edit-link">
+      <%= link_to("編集する", "/posts/#{@post.id}/edit") %>
+    </div>
+
+    <div class="destroy-link">
+      <%= link_to("削除する", "/posts/#{@post.id}/destroy", {method: "delete"}) %>
+    </div>
   </div>
 </div>

@@ -1,2 +1,9 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="main posts-new">
+  <div class="container">
+    <h2>投稿編集</h2>
+      <%= form_with(model: @post, url:"/posts/#{@post.id}/update") do |form| %>
+      <%= form.text_field :content %>
+      <%= form.submit '更新する' %>
+    <% end %>
+  </div>
+</div>
