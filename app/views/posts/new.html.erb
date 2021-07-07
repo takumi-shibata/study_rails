@@ -1,8 +1,14 @@
 <div class="main posts-new">
   <div class="container">
   <h2>新規投稿</h2>
+    <div class="error-massage">
+      <% @post.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    </div>
+    
     <!-- モデルのみだとNoMethodError undefined method `***_path'が発生する。どこに飛ばすのかurlを指定 -->
-    <%= form_with model: @post, url: posts_create_path  do |form| %>
+    <%= form_with model: @post, url: posts_create_path, local: true do |form| %>
       <%= form.text_field :content %>
       <%= form.submit '投稿する' %>
     <% end %>

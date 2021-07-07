@@ -16,20 +16,29 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
-    post.save
-    redirect_to posts_index_path
+    @post = Post.new(post_params)
+    if @post.save
+      flash[:notice] = "投稿に成功しました"
+      redirect_to posts_index_path
+    else
+      render("posts/new")
+    end
   end
 
   def update
-    post = Post.find_by(id: params[:id])
-    post.update(post_params)
-    redirect_to posts_index_path
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "編集に成功しました"
+      redirect_to posts_index_path
+    else
+      render("posts/edit")
+    end
   end
 
   def destroy
     post = Post.find_by(id: params[:id])
     post.destroy
+    flash[:notice] = "削除に成功しました"
     redirect_to posts_index_path    
   end
 

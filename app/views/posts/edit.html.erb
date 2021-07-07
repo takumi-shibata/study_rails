@@ -1,7 +1,13 @@
 <div class="main posts-new">
   <div class="container">
     <h2>投稿編集</h2>
-      <%= form_with(model: @post, url:"/posts/#{@post.id}/update") do |form| %>
+      <div class="error-message">
+         <% @post.errors.full_messages.each do |message| %>
+             <%= message %>
+         <% end %>
+      </div>
+
+    <%= form_with(model: @post, url:"/posts/#{@post.id}/update", local: true) do |form| %>
       <%= form.text_field :content %>
       <%= form.submit '更新する' %>
     <% end %>
