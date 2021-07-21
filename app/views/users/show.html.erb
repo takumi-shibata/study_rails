@@ -1,0 +1,14 @@
+<div class="main users-show">
+  <div class="container">
+  　<h2>ユーザ一詳細</h2>
+    <div class="users-show-item">
+      <p>
+        <%= @user.name %>
+      </p>
+    </div>
+
+    <div class="edit-link">
+      <%= link_to("編集する", edit_user_path) %> <!-- link_to("編集する", "/users/#{@user.id}/edit") と同じこと -->
+    </div>
+  </div>
+</div>

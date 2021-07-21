@@ -1,0 +1,16 @@
+<div class="main users-edit">
+  <div class="container">
+  　<h2>ユーザ一編集</h2>
+    <div class="error-message">
+      <% @user.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    </div>
+
+    <%= form_with(model: @user, url: user_path, local: true) do |f| %>
+      <%= f.text_field :name %>
+      <%= f.text_field :email %>
+      <%= f.submit "更新する" %>
+    <% end %>
+  </div>
+</div>
