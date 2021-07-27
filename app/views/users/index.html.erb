@@ -1,0 +1,10 @@
+<div class="main users-index">
+  <div class="container">
+  　<h2>ユーザ一 一覧</h2>
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <%= link_to(user.name, user_path(user.id)) %> <!-- link_to(user.name, "/users/#{user.id}")と同じこと -->
+      </div>
+    <% end %>
+  </div>
+</div>
