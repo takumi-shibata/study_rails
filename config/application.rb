@@ -10,6 +10,10 @@ module StudyRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.i18n.default_locale = :ja # デフォルトの言語を日本語に設定
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s] #複数のローケルファイルが読み込まれる設定
+    config.time_zone = 'Tokyo' # タイムゾーンを日本時間に統一
+    config.active_record.default_timezone = :local  # タイムゾーンを日本時間に統一
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

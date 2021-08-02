@@ -6,7 +6,8 @@
         <%= @post.content %>
       </p>
       <div class="post-time">
-        <%= @post.created_at %>
+        <!-- Time::strftimeメソッドを使用し「UTC:時差」を消して見栄えをよくしている -->
+        <%= @post.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %>
       </div>
     </div>
 
