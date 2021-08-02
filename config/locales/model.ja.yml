@@ -4,10 +4,10 @@ ja:
       post: 投稿 # Postモデル
       user: ユーザー # Userモデル
     attributes:
-      post: # Postモデルの指定
+      post: # Postモデルのカラム
         id: ID
         content: 投稿内容
-      user: # Userモデルの指定
+      user: # Userモデルのカラム
         id: ID
         name: 名前
         email: メールアドレス
