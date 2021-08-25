@@ -8,7 +8,9 @@
     </div>
 
     <div class="edit-link">
-      <%= link_to("編集する", edit_user_path) %> <!-- link_to("編集する", "/users/#{@user.id}/edit") と同じこと -->
+      <% if @user.id == @current_user.id %> <!-- 詳細ページのユーザー(id)とログインしている現在のユーザー(id)が等しい場合は編集ページに遷移できる -->
+        <%= link_to("編集する", edit_user_path) %> <!-- link_to("編集する", "/users/#{@user.id}/edit") と同じこと -->
+      <% end %>
     </div>
   </div>
 </div>

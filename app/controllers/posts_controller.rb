@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  # 各コントローラの各アクションで共通する処理(全アクションに適用しない場合)
+  before_action :authenticate_user
+
   def new
     @post = Post.new
   end

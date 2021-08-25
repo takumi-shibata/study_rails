@@ -9,7 +9,8 @@
 
     <%= form_with(model: @user, url: user_path, local: true) do |f| %>
       <%= f.text_field :name %>
-      <%= f.text_field :email %>
+      <%= f.email_field :email %>
+      <%= f.password_field :password %>
       <%= f.submit "更新する" %>
     <% end %>
   </div>
